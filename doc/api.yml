@@ -3,7 +3,7 @@ info:
   title: Sample API
   version: 1.0.0
 servers:
-  - url:
+  - url: https://uhfrlkposl6btj4g75v7fvffve0pgemf.lambda-url.eu-west-3.on.aws/
 paths:
   /stored_int:
     get:
@@ -11,3 +11,9 @@ paths:
       responses:
         '200':
           description: Return aleatory number successfully
+  /mail:
+    get:
+      summary: Send email with body
+      responses:
+        '200':
+          description: Return a message like "email sent successfully"
