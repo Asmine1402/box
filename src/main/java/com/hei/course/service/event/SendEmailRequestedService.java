@@ -20,6 +20,8 @@ public class SendEmailRequestedService implements Consumer<SendEmailRequested> {
     @Override
     public void accept(SendEmailRequested sendEmailRequested) {
         InternetAddress recipientAddress = new InternetAddress(sendEmailRequested.getTo());
-        mailer.accept(new Email(recipientAddress, List.of(), List.of(), "", "... world!", List.of()));
+        String fullBody = sendEmailRequested.getSalutation() + "\n\n"
+                + sendEmailRequested.getBody();
+        mailer.accept(new Email(recipientAddress, List.of(), List.of(), sendEmailRequested.getSubject(), fullBody, List.of()));
     }
 }
