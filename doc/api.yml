@@ -11,9 +11,23 @@ paths:
       responses:
         '200':
           description: Return aleatory number successfully
-  /mail:
+  /hello:
     get:
       summary: Send email with body
+      operationId: helloWorld
+      parameters:
+        - name: to
+          in: query
+          required: true
+          description: recipient email address
+          schema:
+            type: string
+            format: email
       responses:
         '200':
           description: Return a message like "email sent successfully"
+          content:
+            text/plain:
+              schema:
+                type: string
+                example:  "... world!"
