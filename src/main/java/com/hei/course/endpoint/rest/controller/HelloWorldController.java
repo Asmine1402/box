@@ -29,10 +29,10 @@ public class HelloWorldController {
   //    return "Email sent successfully";
   //  }
 
-//  @GetMapping("/hello")
-//  public String helloWorld() {
-//    return "... world!";
-//  }
+  //  @GetMapping("/hello")
+  //  public String helloWorld() {
+  //    return "... world!";
+  //  }
 
   private final HelloWorldService service;
 
