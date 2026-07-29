@@ -1,7 +1,9 @@
 package com.hei.course.endpoint.rest.controller;
 
+import com.hei.course.service.HelloWorldService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -27,8 +29,15 @@ public class HelloWorldController {
   //    return "Email sent successfully";
   //  }
 
+//  @GetMapping("/hello")
+//  public String helloWorld() {
+//    return "... world!";
+//  }
+
+  private final HelloWorldService service;
+
   @GetMapping("/hello")
-  public String helloWorld() {
-    return "... world!";
+  public String helloWorld(@RequestParam String name) {
+    return service.uploadHelloWorldMessage(name);
   }
 }
