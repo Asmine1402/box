@@ -12,25 +12,25 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @AllArgsConstructor
 public class HelloWorldController {
-  private final EventProducer<SendEmailRequested> eventProducer;
-
-  @GetMapping("/hello")
-  @SneakyThrows
-  public String helloWorld(
-      @RequestParam String to,
-      @RequestParam String subject,
-      @RequestParam(defaultValue = "Bonjour,") String salutation,
-      @RequestParam String body) {
-    var event =
-        SendEmailRequested.builder()
-            .to(to)
-            .subject(subject)
-            .salutation(salutation)
-            .body(body)
-            .build();
-    eventProducer.accept(List.of(event));
-    return "Email sent successfully";
-  }
+//  private final EventProducer<SendEmailRequested> eventProducer;
+//
+//  @GetMapping("/hello")
+//  @SneakyThrows
+//  public String helloWorld(
+//      @RequestParam String to,
+//      @RequestParam String subject,
+//      @RequestParam(defaultValue = "Bonjour,") String salutation,
+//      @RequestParam String body) {
+//    var event =
+//        SendEmailRequested.builder()
+//            .to(to)
+//            .subject(subject)
+//            .salutation(salutation)
+//            .body(body)
+//            .build();
+//    eventProducer.accept(List.of(event));
+//    return "Email sent successfully";
+//  }
 
   @GetMapping("/hello")
   public String helloWorld() {
