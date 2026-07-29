@@ -31,4 +31,9 @@ public class HelloWorldController {
     eventProducer.accept(List.of(event));
     return "Email sent successfully";
   }
+
+  @GetMapping("/hello")
+  public String helloWorld() {
+    return "... world!";
+  }
 }
