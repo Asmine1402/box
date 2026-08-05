@@ -13,7 +13,7 @@ public class EntierController {
     return rand.nextInt(10);
   }
 
-  @GetMapping("/hello")
+  @GetMapping("/as")
   public String hello() {
     return "Hello Asmine";
   }
