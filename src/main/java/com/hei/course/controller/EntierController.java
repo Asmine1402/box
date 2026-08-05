@@ -12,4 +12,9 @@ public class EntierController {
     Random rand = new Random();
     return rand.nextInt(10);
   }
+
+  @GetMapping("/hello")
+  public String hello() {
+    return "Hello Asmine";
+  }
 }
